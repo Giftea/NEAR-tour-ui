@@ -1,0 +1,7 @@
+.home-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.723), rgba(0, 0, 0, 0.658)),
+    url('../images/tour-cov.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
