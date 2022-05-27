@@ -18,15 +18,15 @@ const Router = () => {
   }, [getBalance]);
   return (
     <div>
-   { /* <HashRouter>*/}
-    {/*   <Switch>*/}
-        {account.accountId ? (
-          <HomePage address={account.accountId} amount={balance} symbol="NEAR" destroy={destroy} />
-        ) : (
-          <Home login={login} />
-        )}
-   { /*   </Switch>*/}
-    {/* </HashRouter>*/}
+      {/* <HashRouter>*/}
+      {/*   <Switch>*/}
+      {account.accountId ? (
+        <HomePage address={account.accountId} amount={balance} symbol="NEAR" destroy={destroy} />
+      ) : (
+        <Home login={login} />
+      )}
+      {/*   </Switch>*/}
+      {/* </HashRouter>*/}
     </div>
   );
 };

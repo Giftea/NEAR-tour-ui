@@ -51,6 +51,6 @@ export async function commentOnTour(comment) {
 }
 
 export async function rateTour(rate) {
-    rate.id = uuid4();
-    await window.contract.rateTour(rate, GAS, parseNearAmount(0.0001 + ''));
-  }
+  rate.id = uuid4();
+  await window.contract.rateTour({ rate }, GAS, parseNearAmount(0.0001 + ''));
+}
