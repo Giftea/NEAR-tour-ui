@@ -1,8 +1,9 @@
 import React, { useEffect, useCallback, useState } from 'react';
-// import { HashRouter, Switch } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { login, logout as destroy, accountBalance } from '../utils/near';
 import HomePage from './HomePage';
 import Home from './Home';
+import Tour from './Tour';
 
 const Router = () => {
   const account = window.walletConnection.account();
@@ -18,15 +19,23 @@ const Router = () => {
   }, [getBalance]);
   return (
     <div>
-      {/* <HashRouter>*/}
-      {/*   <Switch>*/}
-      {account.accountId ? (
-        <HomePage address={account.accountId} amount={balance} symbol="NEAR" destroy={destroy} />
-      ) : (
-        <Home login={login} />
-      )}
-      {/*   </Switch>*/}
-      {/* </HashRouter>*/}
+      <HashRouter>
+        <Switch>
+          <Route exact path="/">
+            {account.accountId ? (
+              <HomePage
+                address={account.accountId}
+                amount={balance}
+                symbol="NEAR"
+                destroy={destroy}
+              />
+            ) : (
+              <Home login={login} />
+            )}
+          </Route>
+          <Route path="/tour/:id" render={(props) => <Tour {...props} />} />
+        </Switch>
+      </HashRouter>
     </div>
   );
 };

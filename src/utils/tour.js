@@ -14,7 +14,7 @@ export function getTours() {
 }
 
 export function getTour(id) {
-  return window.contract.getTour({ id });
+  return window.contract.getTour(id);
 }
 
 export async function buyTour({ id, price }) {

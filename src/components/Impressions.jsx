@@ -25,6 +25,7 @@ const Impressions = ({ id, address, likes, dislikes }) => {
       await dislikeTour({ id: id });
     }
   };
+
   useEffect(async () => {
     setLiked(likes.includes(address));
     setDisliked(dislikes.includes(address));
