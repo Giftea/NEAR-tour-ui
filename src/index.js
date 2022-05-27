@@ -1,11 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import './index.css'
 import { initializeContract } from "./utils/near";
-
-import "bootstrap";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 window.nearInitPromise = initializeContract()
   .then(() => {
