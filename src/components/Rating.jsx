@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { NotificationSuccess, NotificationError } from './Notification';
 import Loader from './Loader';
 
-export default function BasicRating({ rate, rateNumber, tourId }) {
+export default function BasicRating({ rate, tourId }) {
   const [value, setValue] = useState(rate);
   const [loading, setLoading] = useState(false);
 
@@ -42,11 +42,25 @@ export default function BasicRating({ rate, rateNumber, tourId }) {
               }}
             />{' '}
           </Box>
-          <Typography className="mb-2" component="legend">
-            ({rateNumber}){' '}
-          </Typography>
         </>
       )}
     </>
   );
 }
+
+export const RatingBox = ({ rate, rateNumber, tourId }) => {
+  return (
+    <div className="flex-column">
+      <Typography variant="h5" component="div">
+        Rating
+      </Typography>
+      <div className="d-flex">
+        <BasicRating tourId={tourId} rate={rate} rateNumber={rateNumber} />
+        <Typography component="legend">{`(${rate}/5)`}</Typography>
+      </div>
+      <Typography color="text.secondary" component="legend">
+        {rateNumber} Ratings
+      </Typography>
+    </div>
+  );
+};

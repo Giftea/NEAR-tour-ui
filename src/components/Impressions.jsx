@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { useEffect, useState } from 'react';
-import { IconButton, Box } from '@mui/material';
+import { IconButton, Box, Typography } from '@mui/material';
 import { ThumbUp, ThumbDown } from '@mui/icons-material';
 import { likeTour, dislikeTour, unLikeTour, unDislikeTour } from '../utils/tour';
 
@@ -40,18 +40,21 @@ const Impressions = ({ id, address, likes, dislikes }) => {
       {loading ? (
         <p>...</p>
       ) : (
-        <>
-          <Box>
+        <div className="d-flex">
+          <div>
             <IconButton color={primaryLike} onClick={() => likeFunc(id)}>
               <ThumbUp />
             </IconButton>
-          </Box>
-          <Box>
+
+            <Typography className="text-center">{likes.length}</Typography>
+          </div>
+          <div>
             <IconButton color={primaryDislike} onClick={() => dislikeFunc(id)}>
               <ThumbDown />
             </IconButton>
-          </Box>
-        </>
+            <Typography className="text-center">{dislikes.length}</Typography>
+          </div>
+        </div>
       )}
     </>
   );

@@ -33,7 +33,10 @@ const Router = () => {
               <Home login={login} />
             )}
           </Route>
-          <Route path="/tour/:id" render={(props) => <Tour {...props} />} />
+          <Route
+            path="/tour/:id"
+            render={(props) => <Tour {...props} address={account.accountId} />}
+          />
         </Switch>
       </HashRouter>
     </div>
