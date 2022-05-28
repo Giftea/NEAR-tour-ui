@@ -4,9 +4,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import Card from './Card';
 import { NotificationSuccess, NotificationError } from './Notification';
-import { getTours, buyTour, createTour } from '../utils/tour';
+import { getTours, createTour } from '../utils/tour';
 import { Container, Row } from 'react-bootstrap';
 import Loader from './Loader';
+import { Divider, Typography } from '@mui/material';
+import { blue, grey } from '@mui/material/colors';
+import AddTour from './AddTour';
 
 const Cards = ({ address }) => {
   const [tours, setTours] = useState([]);
@@ -38,34 +41,31 @@ const Cards = ({ address }) => {
     }
   };
 
-  const buy = async (id, price) => {
-    try {
-      await buyTour({
-        id,
-        price
-      }).then((resp) => fetchTours());
-      toast(<NotificationSuccess text="Product bought successfully" />);
-    } catch (error) {
-      toast(<NotificationError text="Failed to purchase product." />);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
     fetchTours();
   }, []);
   return (
     <>
       {!loading ? (
-        <Container>
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <h1 className="fs-4 fw-bold mb-0">Tours</h1>
-            {/* <AddProduct save={addProduct} /> */}
-          </div>
-          <Row xs={1} sm={2} lg={3} className="g-3  mb-5 g-xl-4 g-xxl-5">
+        <Container className=" my-5">
+          <Divider className="my-3">
+            <Typography variant="h4" sx={{ color: blue[700] }} component="div">
+              ~ Explore Tours ~
+            </Typography>
+          </Divider>
+          <AddTour />
+          <Row xs={1} sm={2} lg={3} className="mt-5 mx-3 justify-content-between">
             {tours.map((_tour) => (
-              <Card key={_tour.id} tour={_tour} buy={buy} address={address} />
+              <Card key={_tour.id} tour={_tour} address={address} />
+            ))}
+            {tours.map((_tour) => (
+              <Card key={_tour.id} tour={_tour} address={address} />
+            ))}
+            {tours.map((_tour) => (
+              <Card key={_tour.id} tour={_tour} address={address} />
+            ))}
+            {tours.map((_tour) => (
+              <Card key={_tour.id} tour={_tour} address={address} />
             ))}
           </Row>
         </Container>

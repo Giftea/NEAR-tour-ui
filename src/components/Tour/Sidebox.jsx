@@ -22,7 +22,12 @@ const Sidebox = ({ tour, address, buy }) => {
           <Typography>{utils.format.formatNearAmount(price)} NEAR</Typography>
         </ListItem>
         <Divider />{' '}
-        <ListItem divider className="p-3">
+        <ListItem>
+          <Typography variant="h5" component="div">
+            Rating
+          </Typography>
+        </ListItem>
+        <ListItem className="p-3 pt-0" divider>
           <RatingBox
             tourId={tour.id}
             rate={tour.ratingsAverage}

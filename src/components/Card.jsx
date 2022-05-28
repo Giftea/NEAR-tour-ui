@@ -5,25 +5,23 @@ import React, { useEffect } from 'react';
 
 import {
   Card,
-  Button,
   CardActionArea,
   CardMedia,
   CardContent,
   CardActions,
   Typography,
-  IconButton,
-  Box
+  Divider
 } from '@mui/material';
-import BasicRating from './Rating';
+import { RatingBox } from './Rating';
 import Impressions from './Impressions';
 import { Link } from 'react-router-dom';
 
-const TourCard = ({ tour, buy, address }) => {
+const TourCard = ({ tour, address }) => {
   useEffect(() => {
     // console.log(tour);
   });
   return (
-    <Card className="p-0" sx={{ maxWidth: 345 }}>
+    <Card className="p-0 m-3" sx={{ maxWidth: 345 }}>
       <Link to={`/tour/${tour.id}`}>
         <CardActionArea>
           <CardMedia component="img" height="140" image={tour.imageCover} alt="green iguana" />
@@ -37,12 +35,9 @@ const TourCard = ({ tour, buy, address }) => {
           </CardContent>
         </CardActionArea>
       </Link>
-      <CardActions>
-        <BasicRating
-          tourId={tour.id}
-          rate={tour.ratingsAverage}
-          rateNumber={tour.ratingsQuantity}
-        />
+      <Divider />
+      <CardActions className="justify-content-between px-3">
+        <RatingBox tourId={tour.id} rate={tour.ratingsAverage} rateNumber={tour.ratingsQuantity} />
         <Impressions id={tour.id} address={address} likes={tour.like} dislikes={tour.dislike} />
       </CardActions>
     </Card>

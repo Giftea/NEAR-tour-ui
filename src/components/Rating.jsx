@@ -51,9 +51,6 @@ export default function BasicRating({ rate, tourId }) {
 export const RatingBox = ({ rate, rateNumber, tourId }) => {
   return (
     <div className="flex-column">
-      <Typography variant="h5" component="div">
-        Rating
-      </Typography>
       <div className="d-flex">
         <BasicRating tourId={tourId} rate={rate} rateNumber={rateNumber} />
         <Typography component="legend">{`(${rate}/5)`}</Typography>
