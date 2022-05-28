@@ -5,6 +5,7 @@ import { Button, Chip, Divider, List, ListItem, Typography } from '@mui/material
 import { RatingBox } from '../Rating';
 import Impressions from '../Impressions';
 import { utils } from 'near-api-js';
+import { red } from '@mui/material/colors';
 
 const Sidebox = ({ tour, address, buy }) => {
   const { id, price } = tour;
@@ -17,7 +18,7 @@ const Sidebox = ({ tour, address, buy }) => {
     <Col className=" p-3">
       <List className="custom-card py-2 w-100 ">
         <ListItem className="p-3 justify-content-between">
-          <Chip label={`${tour.sold} sold`} color="primary" className="px-2 font-bold" />
+          <Chip label={`${tour.sold} sold`} sx={{ bgcolor: red[200] }} className="px-2 font-bold" />
           <Typography>{utils.format.formatNearAmount(price)} NEAR</Typography>
         </ListItem>
         <Divider />{' '}

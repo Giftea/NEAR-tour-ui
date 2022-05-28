@@ -3,13 +3,16 @@ import React from 'react';
 import { Row, Container } from 'react-bootstrap';
 import '../../styles/Tour.css';
 import { Parallax } from 'react-parallax';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Description from './Description';
 import Sidebox from './Sidebox';
 import { Comments } from './Comment';
 import { buyTour } from '../../utils/tour';
 import { toast } from 'react-toastify';
 import { NotificationSuccess, NotificationError } from '../Notification';
+import { Link } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { blueGrey } from '@mui/material/colors';
 
 const Tour = ({ tour, address }) => {
   const buy = async (id, price) => {
@@ -34,8 +37,17 @@ const Tour = ({ tour, address }) => {
           </div>
         </div>
       </Parallax>
-      <Container>
-        <Row className=" my-5">
+      <Container className=" my-5">
+        <Button
+          variant="contained"
+          sx={{ bgcolor: blueGrey[400] }}
+          startIcon={<ArrowBackIcon />}
+          className="my-2 mx-1">
+          <Link className="text-white" to="/">
+            Go Back
+          </Link>
+        </Button>
+        <Row>
           <Description desc={tour.description} images={tour.images} />
           <Sidebox tour={tour} address={address} buy={buy} />
         </Row>
