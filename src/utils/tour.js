@@ -47,7 +47,7 @@ export async function unDislikeTour(id) {
 
 export async function commentOnTour(comment) {
   comment.id = uuid4();
-  return window.contract.commentOnTour(comment, GAS, parseNearAmount(0.0001 + ''));
+  return window.contract.commentOnTour({ comment }, GAS, parseNearAmount(0.0001 + ''));
 }
 
 export async function rateTour(rate) {

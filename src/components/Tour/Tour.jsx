@@ -40,7 +40,7 @@ const Tour = ({ tour, address }) => {
           <Sidebox tour={tour} address={address} buy={buy} />
         </Row>
         <Row>
-          <Comments />
+          <Comments tour={tour} />
         </Row>
       </Container>
     </>
