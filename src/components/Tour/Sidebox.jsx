@@ -4,13 +4,21 @@ import { Col } from 'react-bootstrap';
 import { Button, Chip, Divider, List, ListItem, Typography } from '@mui/material';
 import { RatingBox } from '../Rating';
 import Impressions from '../Impressions';
+import { utils } from 'near-api-js';
 
-const Sidebox = ({ tour, address }) => {
+const Sidebox = ({ tour, address, buy }) => {
+  const { id, price } = tour;
+
+  const triggerBuy = () => {
+    buy(id, price);
+  };
+
   return (
     <Col className=" p-3">
       <List className="custom-card py-2 w-100 ">
-        <ListItem className="p-3">
+        <ListItem className="p-3 justify-content-between">
           <Chip label={`${tour.sold} sold`} color="primary" className="px-2 font-bold" />
+          <Typography>{utils.format.formatNearAmount(price)} NEAR</Typography>
         </ListItem>
         <Divider />{' '}
         <ListItem divider className="p-3">
@@ -29,7 +37,7 @@ const Sidebox = ({ tour, address }) => {
           <Impressions id={tour.id} address={address} likes={tour.like} dislikes={tour.dislike} />
         </ListItem>
         <ListItem className="p-3">
-          <Button className="w-100" size="large" variant="contained">
+          <Button className="w-100" size="large" onClick={triggerBuy} variant="contained">
             PURCHASE
           </Button>
         </ListItem>

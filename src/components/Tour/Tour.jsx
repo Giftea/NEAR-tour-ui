@@ -7,8 +7,22 @@ import { Typography } from '@mui/material';
 import Description from './Description';
 import Sidebox from './Sidebox';
 import { Comments } from './Comment';
+import { buyTour } from '../../utils/tour';
+import { toast } from 'react-toastify';
+import { NotificationSuccess, NotificationError } from '../Notification';
 
 const Tour = ({ tour, address }) => {
+  const buy = async (id, price) => {
+    try {
+      await buyTour({
+        id,
+        price
+      });
+      toast(<NotificationSuccess text="Product bought successfully" />);
+    } catch (error) {
+      toast(<NotificationError text="Failed to purchase product." />);
+    }
+  };
   return (
     <>
       <Parallax blur={4} bgImage={tour.imageCover} bgImageAlt="the cat" strength={500}>
@@ -23,7 +37,7 @@ const Tour = ({ tour, address }) => {
       <Container>
         <Row className=" my-5">
           <Description desc={tour.description} images={tour.images} />
-          <Sidebox tour={tour} address={address} />
+          <Sidebox tour={tour} address={address} buy={buy} />
         </Row>
         <Row>
           <Comments />
