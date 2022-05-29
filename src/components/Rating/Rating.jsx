@@ -1,16 +1,13 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import { rateTour } from '../utils/tour';
+import { rateTour } from '../../utils/tour';
 import { toast } from 'react-toastify';
-import { NotificationSuccess, NotificationError } from './Notification';
-import Loader from './Loader';
+import { NotificationSuccess, NotificationError } from '../Notification';
 
 export default function BasicRating({ rate, tourId }) {
-  const [value, setValue] = useState(rate);
   const [loading, setLoading] = useState(false);
 
   const addRate = async (rating) => {
@@ -30,7 +27,7 @@ export default function BasicRating({ rate, tourId }) {
   return (
     <>
       {loading ? (
-        <Loader />
+        <p>...</p>
       ) : (
         <>
           <Box>

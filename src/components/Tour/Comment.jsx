@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
   Divider,
@@ -18,10 +17,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { string, object } from 'yup';
 import { commentOnTour } from '../../utils/tour';
 import { Send } from '@mui/icons-material';
-
-const TextArea = () => {
-  return <TextareaAutosize className="my-2" minRows={3} />;
-};
+import DateUtil from '../../utils/DateUtils';
 
 export const AddComment = ({ id }) => {
   const [open, setOpen] = React.useState(false);
@@ -59,20 +55,17 @@ export const AddComment = ({ id }) => {
               comment: string().required().min(2)
             })}
             initialValues={initialValue}
-            onSubmit={(values, formikHelpers) => {
+            onSubmit={(values) => {
               const value = values.comment;
-              console.log({ tourId: id, comment: value });
               return new Promise((res) => {
                 commentOnTour({ tourId: id, comment: value });
-                console.log(values);
-                console.log(formikHelpers);
                 res();
               });
             }}>
             {() => (
               <Form>
                 <FormGroup>
-                  <Field name="comment" as={TextArea} label="Comment" />
+                  <Field name="comment" as={TextareaAutosize} minRows={3} label="Comment" />
                   <ErrorMessage name="comment" />
                 </FormGroup>
                 <div className="d-flex flex-row-reverse">
@@ -99,18 +92,25 @@ export const Comment = ({ comment }) => {
     <>
       <Divider />
       <div className="px-4 py-4">
-        <div className=" d-flex align-items-center">
-          <Avatar sx={{ bgcolor: blue[300] }}>
+        <div className=" d-flex  align-items-center">
+          <Avatar sx={{ bgcolor: blue[300], width: 56, height: 56 }}>
             <PersonOutlineIcon />
           </Avatar>
 
-          <Typography className="px-2 font-bold" component="div">
-            {comment.commenter}
+          <Box className="mx-3">
+            <Typography className="font-bold" component="div">
+              {comment.commenter}
+            </Typography>
+            <Typography gutterBottom color="text.secondary" variant="small" component="small">
+              {DateUtil(comment.createdAt)}
+            </Typography>
+          </Box>
+        </div>
+        <div>
+          <Typography className="pt-2 mx-4 px-5 pr-0" component="div">
+            {comment.comment}
           </Typography>
         </div>
-        <Typography className="pt-2 px-5" component="div">
-          {comment.comment}
-        </Typography>
       </div>
     </>
   );
@@ -121,7 +121,7 @@ export const Comments = ({ tour }) => {
     <div className="px-4">
       <Col md={8} className="custom-card my-4">
         <div className="py-4 px-4 d-flex justify-content-between align-content-center">
-          <Typography className="" variant="h4" component="div">
+          <Typography className="" variant="h5" component="div">
             {tour.comments.length} Comments
           </Typography>
           <div>

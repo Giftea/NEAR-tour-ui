@@ -6,7 +6,7 @@ const GAS = 100000000000000;
 export function createTour(tour) {
   tour.id = uuid4();
   tour.price = parseNearAmount(tour.price + '');
-  return window.contract.setTour({ tour });
+  return window.contract.setTour({ tour }, GAS, parseNearAmount(0.52 + ''));
 }
 
 export function getTours() {
@@ -26,7 +26,7 @@ export async function updateTour(tour) {
 }
 
 export async function deleteTour(id) {
-  return window.contract.deleteTour({ id });
+  return window.contract.deleteTour(id);
 }
 
 export async function likeTour(id) {

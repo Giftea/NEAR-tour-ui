@@ -23,7 +23,7 @@ const TourPage = ({ address }) => {
 
   useEffect(() => {
     fetchTour(params.id);
-    console.log(tour);
+  
   }, []);
   return <>{loading ? <Loader /> : <Tour tour={tour} address={address} />}</>;
 };

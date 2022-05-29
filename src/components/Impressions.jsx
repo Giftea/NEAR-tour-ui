@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
 import React, { useEffect, useState } from 'react';
-import { IconButton, Box, Typography } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 import { ThumbUp, ThumbDown } from '@mui/icons-material';
 import { likeTour, dislikeTour, unLikeTour, unDislikeTour } from '../utils/tour';
 

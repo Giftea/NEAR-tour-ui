@@ -2,7 +2,7 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { Button, Chip, Divider, List, ListItem, Typography } from '@mui/material';
-import { RatingBox } from '../Rating';
+import { RatingBox } from '../Rating/Rating';
 import Impressions from '../Impressions';
 import { utils } from 'near-api-js';
 import { red } from '@mui/material/colors';
