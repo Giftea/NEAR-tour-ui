@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { IconButton, Typography } from '@mui/material';
 import { ThumbUp, ThumbDown } from '@mui/icons-material';
-import { likeTour, dislikeTour, unLikeTour, unDislikeTour } from '../utils/tour';
+import { likeTour, dislikeTour } from '../utils/tour';
 
 const Impressions = ({ id, address, likes, dislikes }) => {
   const [liked, setLiked] = useState(false);
@@ -11,18 +11,10 @@ const Impressions = ({ id, address, likes, dislikes }) => {
   const [loading, setLoading] = useState(true);
 
   const likeFunc = async (id) => {
-    if (liked) {
-      return await unLikeTour({ id: id });
-    } else {
-      return await likeTour({ id: id });
-    }
+    return await likeTour({ id: id });
   };
   const dislikeFunc = async (id) => {
-    if (disliked) {
-      return await unDislikeTour({ id: id });
-    } else {
-      await dislikeTour({ id: id });
-    }
+    await dislikeTour({ id: id });
   };
 
   useEffect(async () => {

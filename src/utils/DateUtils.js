@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import ReactTimeAgo from 'react-time-ago';
 import { format } from 'date-fns';

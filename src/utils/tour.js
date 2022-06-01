@@ -33,16 +33,8 @@ export async function likeTour(id) {
   return window.contract.likeTour(id, GAS, parseNearAmount(0.0001 + ''));
 }
 
-export async function unLikeTour(id) {
-  return window.contract.unLikeTour(id, GAS, parseNearAmount(0.0001 + ''));
-}
-
 export async function dislikeTour(id) {
   return window.contract.dislikeTour(id, GAS, parseNearAmount(0.0001 + ''));
-}
-
-export async function unDislikeTour(id) {
-  return window.contract.unDislikeTour(id, GAS, parseNearAmount(0.0001 + ''));
 }
 
 export async function commentOnTour(comment) {

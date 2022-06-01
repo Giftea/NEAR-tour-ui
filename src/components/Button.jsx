@@ -85,3 +85,8 @@ export const GoToHomePage = () => {
     </Button>
   );
 };
+
+
+export const HomeButton = () => {
+
+}
