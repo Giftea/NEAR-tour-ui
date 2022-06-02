@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NEAR-tour-ui/static/css/main.fe1c35ff.chunk.css",
-    "main.js": "/NEAR-tour-ui/static/js/main.a4c2d205.chunk.js",
-    "main.js.map": "/NEAR-tour-ui/static/js/main.a4c2d205.chunk.js.map",
+    "main.js": "/NEAR-tour-ui/static/js/main.1e83815e.chunk.js",
+    "main.js.map": "/NEAR-tour-ui/static/js/main.1e83815e.chunk.js.map",
     "runtime-main.js": "/NEAR-tour-ui/static/js/runtime-main.f8c60674.js",
     "runtime-main.js.map": "/NEAR-tour-ui/static/js/runtime-main.f8c60674.js.map",
     "static/css/2.75e563ec.chunk.css": "/NEAR-tour-ui/static/css/2.75e563ec.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.75e563ec.chunk.css",
     "static/js/2.0db910ca.chunk.js",
     "static/css/main.fe1c35ff.chunk.css",
-    "static/js/main.a4c2d205.chunk.js"
+    "static/js/main.1e83815e.chunk.js"
   ]
 }
