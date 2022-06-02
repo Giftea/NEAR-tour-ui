@@ -28,7 +28,7 @@ const Tour = ({ tour, address }) => {
       <DeleteTourButton tour={tour} address={address} />
       <Parallax blur={4} bgImage={tour.imageCover} bgImageAlt="the cat" strength={500}>
         <div style={{ height: 400 }}>
-          <div className="w-100 h-100 d-flex align-items-center justify-content-center">
+          <div className="w-100 h-100 d-flex text-center align-items-center justify-content-center">
             <Typography variant="h2" className="font-bold text-shad " component="div">
               {tour.name}
             </Typography>

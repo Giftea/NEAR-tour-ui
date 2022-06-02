@@ -37,7 +37,7 @@ const Cards = ({ address }) => {
               ~ Explore Tours ~
             </Typography>
           </Divider>
-          <Row xs={1} sm={2} lg={3} className="mt-5 mx-3">
+          <Row xs={1} sm={2} lg={3} className="mt-5 mx-md-3">
             {tours.map((_tour) => (
               <Col key={_tour.id}>
                 <Card tour={_tour} address={address} />

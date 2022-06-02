@@ -25,10 +25,10 @@ const TourCard = ({ tour, address }) => {
             <CardMedia component="img" height="140" image={tour.imageCover} alt="green iguana" />
             <CardContent>
               <Box className="d-flex align-items-center justify-content-between">
-                <Typography gutterBottom color="text.primary" variant="h5" component="div">
+                <Typography gutterBottom color="text.primary" variant="h6" component="div">
                   {tour.name}
                 </Typography>
-                <Typography gutterBottom color="primary" component="div">
+                <Typography gutterBottom color="primary" variant='small' component="small">
                   • {DateUtil(tour.createdAt)}
                 </Typography>
               </Box>
