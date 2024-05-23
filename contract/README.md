@@ -28,9 +28,9 @@ The logic is very basic.  It's a simple contract demonstrating the following con
 ### Other documentation
 
 - Near-Tours contract and test documentation
-  - See [`/src/tour/README`](./src/tour/README) for contract interface
-  - See [`/src/tour/__tests__/README`](./src/tour/__tests__/README) for Near-Tours unit testing details
-  - See [`/scripts/README`](./scripts/README) for running scripts
+  - See [`/src/tour/README`](./src/tour/README.md) for contract interface
+  - See [`/src/tour/__tests__/README`](./src/tour/__tests__/README.md) for Near-Tours unit testing details
+  - See [`/scripts/README`](./scripts/README.md) for running scripts
 
 
 ### Contracts and Unit Tests
