@@ -1,5 +1,8 @@
 # Introduction
 
+<img width="1439" alt="Screenshot 2022-06-01 at 11 20 21 PM" src="https://user-images.githubusercontent.com/70780434/171515612-871777c8-a6ef-41b0-b795-4312a42146b0.png">
+
+
 Near Tours is an application that allows users to create vacation tours and interact with tours created by other users. Some awesome features of this project include:
 
 - Tour creation
@@ -8,9 +11,7 @@ Near Tours is an application that allows users to create vacation tours and inte
 - Users can leave comments on a tour
 - Users can rate a tour only once!
 
-## [Live Link](https://giftea.github.io/NEAR-tour-ui)
-
-<img width="1439" alt="Screenshot 2022-06-01 at 11 20 21 PM" src="https://user-images.githubusercontent.com/70780434/171515612-871777c8-a6ef-41b0-b795-4312a42146b0.png">
+Visit the deployed app [here](https://giftea.github.io/NEAR-tour-ui).
 
 
 ## Getting Started
