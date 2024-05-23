@@ -1,4 +1,4 @@
-![Near, Inc. logo](https://near.org/wp-content/themes/near-19/assets/img/logo.svg?t=1553011311)
+
 
 ## Design
 
@@ -13,22 +13,22 @@ function setTour
 ```ts
 function getTour
 ```
-- "View" function (ie. a function that does not alters contract state)
-- Recieves a Tour's `id` as parameter
+- "View" function (ie. a function that does not alter contract state)
+- Receives a Tour's `id` as parameter
 - Returns a Tour object
 
 ```ts
 function getTours
 ```
-- "View" function (ie. a function that does not alters contract state)
+- "View" function (ie. a function that does not alter contract state)
 - Returns the whole Tours details/content
 
 ```ts
 function buyTour
 ```
 - "Change" function (ie. a function that alters contract state)
-- Recieves a Tour's `id` as parameter
-- This fetches a Tour by the `id` parameter and increaments it's sold amount
+- Receives a Tour's `id` as parameter
+- This fetches a Tour by the `id` parameter and increases its sold amount
 
 ```ts
 function updateTour
@@ -40,23 +40,23 @@ function updateTour
 function deleteTour
 ```
 - "Change" function (ie. a function that alters contract state)
-- Recieves a Tour's `id` as parameter
-- Fetches the Tour by `id`, deletes it together with it's comments and rates
+- Receives a Tour's `id` as parameter
+- Fetches the Tour by `id`, deletes it together with its comments and rates
 
 ```ts
 function likeTour
 ```
 - "Change" function (ie. a function that alters contract state)
-- Recieves a Tour's `id` as parameter
+- Receives a Tour's `id` as parameter
 - Fetches the Tour by `id`, and adds a like to it.
 - If a like has been added by a user and the function is called again, it removes the like.
-- If a dislike has been added by a user and the function is called, it removes the dislike and adds a like
+- If a dislike has been added by a user and the function is called, it removes the dislike and adds a "like"
 
 ```ts
 function dislikeTour
 ```
 - "Change" function (ie. a function that alters contract state)
-- Recieves a Tour's `id` as parameter
+- Receives a Tour's `id` as parameter
 - Fetches the Tour by `id`, and adds a dislike to it.
 - If a dislike has been added by a user and the function is called again, it removes the dislike.
 - If a like has been added by a user and the function is called, it removes the like and adds a dislike

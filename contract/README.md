@@ -1,17 +1,15 @@
-# Sample
+# NEAR-TOURS Smart Contract
 
-This repository includes a complete project structure for AssemblyScript contracts targeting the NEAR platform.
+This directory includes a complete project structure for AssemblyScript/TypeScript contracts targeting the NEAR platform.
 
-The example here is very basic.  It's a simple contract demonstrating the following concepts:
+The logic is very basic.  It's a simple contract demonstrating the following concepts:
 - a single contract
 - the difference between `view` vs. `change` methods
 - basic contract storage
 
-The goal of this repository is to make it as easy as possible to get started writing unit tests for AssemblyScript contracts built to work with NEAR Protocol.
+<!-- ## Usage -->
 
-## Usage
-
-### Getting started
+<!-- ### Getting started
 
 1. clone this repo to a local folder
 2. run `yarn`
@@ -25,27 +23,27 @@ The goal of this repository is to make it as easy as possible to get started wri
     - run `yarn test:unit` to run only unit tests
 - run `yarn build` to quickly verify build status
 - run `yarn deploy` to quickly run the `./scripts/1.deploy.sh` command to deploy smart contract
-- run `yarn clean` to clean up build folder
+- run `yarn clean` to clean up build folder -->
 
 ### Other documentation
 
-- tour contract and test documentation
-  - see `/src/tour/README` for contract interface
-  - see `/src/tour/__tests__/README` for tour unit testing details
-  - see `/scripts/README` for running scripts
+- Near-Tours contract and test documentation
+  - See [`/src/tour/README`](./src/tour/README) for contract interface
+  - See [`/src/tour/__tests__/README`](./src/tour/__tests__/README) for Near-Tours unit testing details
+  - See [`/scripts/README`](./scripts/README) for running scripts
 
 
 ### Contracts and Unit Tests
 
 ```txt
 src
-├── tour                        <-- tour contract
+├── tour                        
 │   ├── README.md
 │   ├── __tests__
 │   │   ├── README.md
 │   │   └── index.unit.spec.ts
 │   └── assembly
-│       └── index.ts
+│       └── index.ts            <-- tour contract
 |       └── models
 |            └── commentModel.ts
 |            └── rateModel.ts
