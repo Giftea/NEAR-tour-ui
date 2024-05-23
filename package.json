@@ -11,12 +11,14 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "buffer": "^6.0.3",
     "date-fns": "^2.28.0",
     "formik": "^2.2.9",
-    "framer-motion": "^6.3.4",
     "gh-pages": "^4.0.0",
     "javascript-time-ago": "2.3.8",
     "near-api-js": "^0.44.2",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^17.0.2",
@@ -24,7 +26,7 @@
     "react-multi-carousel": "^2.8.0",
     "react-parallax": "^3.5.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-time-ago": "7.1.1",
     "react-toastify": "^9.0.1",
     "uuid": "^8.3.2",
@@ -32,10 +34,11 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "debug": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
@@ -66,6 +69,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "react-app-rewired": "^2.2.1",
     "prettier": "^2.6.2"
   }
 }

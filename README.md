@@ -12,6 +12,6 @@ Near Tours allows a user who has access to the application to create tours and i
 <img width="1439" alt="Screenshot 2022-06-01 at 11 20 21 PM" src="https://user-images.githubusercontent.com/70780434/171515612-871777c8-a6ef-41b0-b795-4312a42146b0.png">
 
 
-## This a demo for dacade
+<!-- ## This a demo for Dacade
 
-[Dacade](https://dacade.org/signup?invite=giftea)
+[Dacade](https://dacade.org/signup?invite=giftea) -->
