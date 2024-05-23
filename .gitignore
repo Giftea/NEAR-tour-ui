@@ -24,4 +24,4 @@ yarn-error.log*
 
 /contract/node_modules/
 /contract/neardev/
-/contract/build/
+/contract/build/.env
